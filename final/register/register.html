@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   Create account
+  </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="jumbotron jumbotron-fluid">
+   <div class="container">
+    <div class="row">
+     <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+      <h1 class="mb-3 text-center">
+       Create a new account
+      </h1>
+      <p class="lead">
+       Register your account, it's free.
+      </p>
+      <form action="submit.php" class="mb-3" method="POST">
+       <div class="row">
+        <div class="form-group col-12 col-sm-6">
+         <label for="firstName">
+          First name:
+         </label>
+         <input class="form-control" id="firstName" name="firstName" placeholder="First name" type="text"/>
+        </div>
+        <div class="form-group col-12 col-sm-6">
+         <label for="lastName">
+          Last name:
+         </label>
+         <input class="form-control" id="lastName" name="lastName" placeholder="Last name" type="text"/>
+        </div>
+       </div>
+       <div class="form-group">
+        <label for="email">
+         Email:
+        </label>
+        <input class="form-control" id="email" name="email" placeholder="example@example.com" required="" type="email"/>
+       </div>
+       <div class="form-group">
+        <label for="password">
+         Password:
+        </label>
+        <input class="form-control" id="password" name="password" required="" type="password"/>
+       </div>
+       <label>
+        Birthday:
+       </label>
+       <div class="row no-gutters">
+        <div class="form-group col-4">
+         <label class="sr-only" for="birthdayDay">
+          Birthday day
+         </label>
+         <select class="form-control" id="birthdayDay" name="birthdayDay">
+          <option value="">
+           Day
+          </option>
+         </select>
+        </div>
+        <div class="form-group col-4">
+         <label class="sr-only" for="birthdayMonth">
+          Birthday month
+         </label>
+         <select class="form-control" id="birthdayMonth" name="birthdayMonth">
+          <option value="">
+           Month
+          </option>
+         </select>
+        </div>
+        <div class="form-group col-4">
+         <label class="sr-only" for="birthdayYear">
+          Birthday year
+         </label>
+         <select class="form-control" id="birthdayYear" name="birthdayYear">
+          <option value="">
+           Year
+          </option>
+         </select>
+        </div>
+       </div>
+       <div class="form-check form-check-inline">
+        <label class="form-check-label">
+         <input checked="" class="form-check-input" id="exampleRadios1" name="gender" type="radio" value="male"/>
+         Man
+        </label>
+       </div>
+       <div class="form-check form-check-inline">
+        <label class="form-check-label">
+         <input class="form-check-input" id="exampleRadios2" name="gender" type="radio" value="female"/>
+         Woman
+        </label>
+       </div>
+       <button class="btn btn-primary btn-block mb-3" type="submit">
+        Create account
+       </button>
+       <div class="alert alert-info small" role="alert">
+        By clicking above you agree to our
+        <a class="alert-link" href="#">
+         Terms &amp; Conditions
+        </a>
+        and
+                our
+        <a class="alert-link" href="#">
+         Privacy Policy
+        </a>
+        .
+       </div>
+       <div class="text-center">
+        <p>
+         or ...
+        </p>
+        <a class="btn btn-success" href="/Login/login.html">
+         Login
+        </a>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
+  </script>
+  <script>
+   $(document).ready(function () {
+    // Populate day
+    for (let i = 1; i <= 31; i++) {
+      $('#birthdayDay').append(`<option value="${i}">${i}</option>`);
+    }
+
+    // Populate month
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    $.each(months, function (index, value) {
+      $('#birthdayMonth').append(`<option value="${value.toLowerCase()}">${value}</option>`);
+    });
+
+    // Populate year
+    const currentYear = new Date().getFullYear();
+    for (let year = currentYear; year >= 1900; year--) {
+      $('#birthdayYear').append(`<option value="${year}">${year}</option>`);
+    }
+  });
+  </script>
+ </body>
+</html>

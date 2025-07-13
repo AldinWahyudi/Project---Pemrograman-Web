@@ -1,0 +1,46 @@
+
+body {
+  font-family: sans-serif;
+  background: #f6f6f6;
+  padding: 2rem;
+}
+.cart-wrapper .box {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.cart-wrapper img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.controls {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.controls button {
+  padding: 5px 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+.controls button:hover {
+  background: #bbb;
+}
+.total-wrapper {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+  text-align: right;
+}
+.checkout-check {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
